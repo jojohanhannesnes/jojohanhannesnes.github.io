@@ -1,0 +1,21 @@
+[book]
+authors = ["Johannes Sandjaja"]
+language = "en"
+multilingual = false
+src = "src"
+title = "My Journey With Rust"
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output]
+
+[output.html]
+default-theme = "navy"
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+fold.enable = true
+playground.copyable = true
+print.enable = false
+search.enable = false
