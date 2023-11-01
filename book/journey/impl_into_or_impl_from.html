@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>My Journey With Rust - My Journey With Rust</title>
+        <title>Impl Into or Impl From? - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../journey/index.html" class="active"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/init.html"><strong aria-hidden="true">1.1.</strong> Why do i want to do this?</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.2.</strong> Using Enum vs Generics as return type</div></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.4.</strong> What the F is Box&lt;dyn Error&gt;</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.6.</strong> println format</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.7.</strong> Static Dispatch and Dynamic Dispatch</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.8.</strong> HashMap with lexicographical order, Maybe it's time for BTreeMap</div></li></ol></li><li class="chapter-item "><a href="../algorithm.html">Algorithms</a></li><li class="chapter-item affix "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li><li class="chapter-item affix "><div>Whimsical Roadmap</div></li><li class="chapter-item affix "><div>Random Stuff</div></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/init.html"><strong aria-hidden="true">1.1.</strong> Why do i want to do this?</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.2.</strong> Using Enum vs Generics as return type</div></li><li class="chapter-item expanded "><a href="../journey/impl_into_or_impl_from.html" class="active"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.4.</strong> What the F is Box&lt;dyn Error&gt;</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.6.</strong> println format</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.7.</strong> Static Dispatch and Dynamic Dispatch</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.8.</strong> HashMap with lexicographical order, Maybe it's time for BTreeMap</div></li></ol></li><li class="chapter-item "><a href="../algorithm.html">Algorithms</a></li><li class="chapter-item affix "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li><li class="chapter-item affix "><div>Whimsical Roadmap</div></li><li class="chapter-item affix "><div>Random Stuff</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,18 +154,65 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="the-journey"><a class="header" href="#the-journey">The Journey</a></h1>
-<p>This is essentially my digital diary, where I chronicle the aspects of Rust that have piqued my interest and captivated my curiosity as I've delved into the language.</p>
+                        <h1 id="unlocking-the-magic-of-impl-into-and-impl-from"><a class="header" href="#unlocking-the-magic-of-impl-into-and-impl-from">Unlocking the Magic of impl Into and impl From</a></h1>
+<p>Today, I embarked on a journey to create a dynamic return statement for a Rust function, and the code quickly became a labyrinth. Here's what I started with:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn function() -&gt; ??? {
+
+}
+<span class="boring">}</span></code></pre></pre>
+<p>To bring some structure and flexibility (i guess?), I decided to introduce an enum called Response:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span>
+<span class="boring">fn main() {
+</span>enum Response {
+    String(String),
+    Number(i64),
+}
+
+fn function() -&gt; Response {
+    ...
+    Response::String(String:from(&quot;response&quot;)) // Response::Number(100) will also works
+}
+
+<span class="boring">}</span></code></pre></pre>
+<p>While the enum certainly tidied things up, I couldn't help but wonder if there was a more elegant solution. What if we could seamlessly transform a value into the desired return type, without all this boilerplate? Enter <code>Into</code>.</p>
+<p><code>Into</code> is a trait that performs type conversion, provided there's an implementation for it. It's like magic, allowing you to turn one type into another with minimal effort. But it comes with a twist – there's also <code>From</code>. Both of these traits seem to do the same thing, but there's a subtle difference.</p>
+<p><code>Clippy</code> has an opinion on this matter:</p>
+<blockquote>
+<p>An implementation of <code>From</code> is preferred since it gives you <code>Into&lt;_&gt;</code> for free where the reverse isn't true.</p>
+</blockquote>
+<p>This nugget of wisdom tells us that if we implement <code>From</code>, we automatically inherit <code>Into</code>. The reverse, however, is not true. <br><br>Here's a demonstration:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// impl Into&lt;Response&gt; for i64 {
+//     fn into(self) -&gt; Response {
+//         Response::Number(self)
+//     }
+// }
+// 12_i64.into() ✅
+// Response::from(12_i64) ❌
+
+impl From&lt;i64&gt; for Response {
+    fn from(value: i64) -&gt; Self {
+        Response::Number(value)
+    }
+}
+// 12_i64.into() ✅
+// Response::from(12_i64) ✅
+<span class="boring">}</span></code></pre></pre>
+<p>There's also another thing called <code>TryFrom</code> and <code>TryInto</code>, wasn't sure if they have the same exact behaviour, all i know is that they are fallible (meaning they return <code>Result</code> type), probably for better error handling</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../journey/init.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/init.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../algorithm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -175,11 +222,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../journey/init.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/init.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../algorithm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
