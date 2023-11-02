@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="index.html" class="active">Introduction</a></li><li class="chapter-item "><a href="journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="journey/init.html"><strong aria-hidden="true">1.1.</strong> Why do i want to do this?</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.2.</strong> Using Enum vs Generics as return type</div></li><li class="chapter-item "><a href="journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.4.</strong> What the F is Box&lt;dyn Error&gt;</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.6.</strong> println format</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.7.</strong> Static Dispatch and Dynamic Dispatch</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.8.</strong> HashMap with lexicographical order, Maybe it's time for BTreeMap</div></li></ol></li><li class="chapter-item "><a href="algorithm.html">Algorithms</a></li><li class="chapter-item affix "><a href="project.html">Projects</a></li><li class="chapter-item affix "><a href="youtube.html">Awesome Youtube</a></li><li class="chapter-item affix "><div>Whimsical Roadmap</div></li><li class="chapter-item affix "><div>Random Stuff</div></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="index.html" class="active">Introduction</a></li><li class="chapter-item affix "><a href="journey/init.html">Why do i want to do this?</a></li><li class="chapter-item "><a href="journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.1.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.2.</strong> Static Dispatch and Dynamic Dispatch(In Progress)</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.3.</strong> Using Enum vs Generics as return type</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.4.</strong> What the F is Box&lt;dyn Error&gt;</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.6.</strong> HashMap with lexicographical order, Maybe it's time for BTreeMap</div></li></ol></li><li class="chapter-item "><a href="topics/index.html"><strong aria-hidden="true">2.</strong> Stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.1.</strong> Serde</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.1.1.</strong> Serialize and Deserialize</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.2.</strong> Async -&gt; Tokio</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.2.1.</strong> Concurrency and parrarellism</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.2.2.</strong> Synchronous non blocking actually exist?</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.3.</strong> Traits</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.3.1.</strong> Trait Bounds</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.3.2.</strong> Trait Objects</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.4.</strong> Lifetimes</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.5.</strong> Ownership and Borrowing</div></li></ol></li><li class="chapter-item "><a href="algorithm.html">Algorithms</a></li><li class="chapter-item affix "><a href="project.html">Projects</a></li><li class="chapter-item affix "><a href="youtube.html">Awesome Youtube</a></li><li class="chapter-item affix "><div>Whimsical Roadmap</div></li><li class="chapter-item affix "><div>Random Stuff</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,13 +160,16 @@
 <p>I've organized this exploration into several distinct sections:</p>
 <ul>
 <li>
-<p><a href="journey/index.html">The Journey</a></p>
+<p><a href="journey/index.html">The Journey</a> - Here, you'll find my day-to-day coding adventures and the cool stuff I stumble upon.</p>
 </li>
 <li>
-<p><a href="project.html">The Projects</a></p>
+<p><a href="topics/index.html">The Stuff</a> - Think of it as my Rubber Duck for diving into specific Rust concepts.</p>
 </li>
 <li>
-<p><a href="algorithm.html">The Algorithms</a></p>
+<p><a href="project.html">The Projects</a> - Of course, this is where I showcase my projects, bruh...</p>
+</li>
+<li>
+<p><a href="algorithm.html">The Algorithms</a> - Join me in learning Rust through algorithm implementation.</p>
 </li>
 </ul>
 
@@ -175,7 +178,7 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next prefetch" href="journey/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="journey/init.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -186,7 +189,7 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next prefetch" href="journey/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="journey/init.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

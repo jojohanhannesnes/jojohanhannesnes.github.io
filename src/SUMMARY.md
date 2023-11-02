@@ -1,16 +1,27 @@
 # Summary
 
 [Introduction](README.md)
+[Why do i want to do this?](journey/init.md)
 
 - [My Journey With Rust](journey/README.md)
-    - [Why do i want to do this?](journey/init.md)
-    - [Using Enum vs Generics as return type]()
     - [Impl Into or Impl From?](journey/impl_into_or_impl_from.md)
+    - [Static Dispatch and Dynamic Dispatch(TODO)]()
+    - [Using Enum vs Generics as return type]()
     - [What the F is Box\<dyn Error\>]()
     - [From **String** to **&str** to **impl Into\<String\>** to **Cow**]()
-    - [println format]()
-    - [Static Dispatch and Dynamic Dispatch]()
     - [HashMap with ***lexicographical order***, Maybe it's time for BTreeMap]()
+
+- [Stuff](topics/README.md)
+    - [Serde]()
+        - [Serialize and Deserialize]()
+    - [Async -> Tokio]()
+        - [Concurrency and parrarellism]()
+        - [Synchronous non blocking actually exist?]()
+    - [Traits]()
+        - [Trait Bounds]()
+        - [Trait Objects]()
+    - [Lifetimes]()
+    - [Ownership and Borrowing]()
 
 [Algorithms](algorithm.md)
 [Projects](project.md)

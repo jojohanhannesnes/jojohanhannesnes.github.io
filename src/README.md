@@ -5,8 +5,10 @@ It's a personal space where I'm sharing my experiences, discoveries, and everyth
 
 I've organized this exploration into several distinct sections:
 
-- [The Journey](journey/index.html)
+- [The Journey](journey/index.html) - Here, you'll find my day-to-day coding adventures and the cool stuff I stumble upon.
 
-- [The Projects](project.md)
+- [The Stuff](topics/index.html) - Think of it as my Rubber Duck for diving into specific Rust concepts.
 
-- [The Algorithms](algorithm.md)
+- [The Projects](project.md) - Of course, this is where I showcase my projects, bruh...
+
+- [The Algorithms](algorithm.md) - Join me in learning Rust through algorithm implementation.
