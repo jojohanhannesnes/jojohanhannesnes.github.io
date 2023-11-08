@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>My Journey With Rust - My Journey With Rust</title>
+        <title>Static Dispatch and Dynamic Dispatch - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html" class="active"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.1.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.2.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.3.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.4.</strong> Using Enum vs Generics as return type</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.5.</strong> What the F is Box&lt;dyn Error&gt;</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.6.</strong> HashMap with lexicographical order, Maybe it's time for BTreeMap</div></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">2.</strong> Stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.1.</strong> Serde</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.1.1.</strong> Serialize and Deserialize</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.2.</strong> Async -&gt; Tokio</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.2.1.</strong> Concurrency and parrarellism</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.2.2.</strong> Synchronous non blocking actually exist?</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.3.</strong> Traits</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.3.1.</strong> Trait Bounds</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.3.2.</strong> Trait Objects</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.4.</strong> Lifetimes</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.5.</strong> Ownership and Borrowing</div></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">2.6.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">2.6.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../algorithm.html">Algorithms</a></li><li class="chapter-item affix "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li><li class="chapter-item affix "><div>Whimsical Roadmap</div></li><li class="chapter-item affix "><div>Random Stuff</div></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.1.</strong> Impl Into or Impl From?</a></li><li class="chapter-item expanded "><a href="../journey/static_dynamic_dispatch.html" class="active"><strong aria-hidden="true">1.2.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.3.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.4.</strong> Using Enum vs Generics as return type</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.5.</strong> What the F is Box&lt;dyn Error&gt;</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.6.</strong> HashMap with lexicographical order, Maybe it's time for BTreeMap</div></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">2.</strong> Stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.1.</strong> Serde</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.1.1.</strong> Serialize and Deserialize</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.2.</strong> Async -&gt; Tokio</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.2.1.</strong> Concurrency and parrarellism</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.2.2.</strong> Synchronous non blocking actually exist?</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.3.</strong> Traits</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.3.1.</strong> Trait Bounds</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.3.2.</strong> Trait Objects</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.4.</strong> Lifetimes</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.5.</strong> Ownership and Borrowing</div></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">2.6.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">2.6.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../algorithm.html">Algorithms</a></li><li class="chapter-item affix "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li><li class="chapter-item affix "><div>Whimsical Roadmap</div></li><li class="chapter-item affix "><div>Random Stuff</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,18 +154,79 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="the-journey"><a class="header" href="#the-journey">The Journey</a></h1>
-<p>This is essentially my digital diary, where I chronicle the aspects of Rust that have piqued my interest and captivated my curiosity as I've delved into the language.</p>
+                        <h1 id="choosing-how-your-code-runs-static-vs-dynamic-dispatch"><a class="header" href="#choosing-how-your-code-runs-static-vs-dynamic-dispatch">Choosing How Your Code Runs: Static vs Dynamic Dispatch</a></h1>
+<p>Have you ever wondered how Rust programming deals with different types of data? Two methods, Static Dispatch and Dynamic Dispatch, are here to save the day. I first encountered these concepts while learning about Rust traits. So, what's all the fuss about? Well, it's all about making your code lean and clean while keeping it easy to understand.</p>
+<h2 id="static-dispatch-double-the-code-double-the-fun"><a class="header" href="#static-dispatch-double-the-code-double-the-fun">Static Dispatch: Double the Code, Double the Fun!</a></h2>
+<p>Imagine you have two separate pieces of code, like twins. Each of these codes does something slightly different based on the type of data you give it. This precision is great, but it can make your program's file size bigger.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn do_something&lt;T: Foo&gt;(x: T) {
+    ...
+}
+// once compiled become something like below
+fn do_something_for_u8(x: u8) {
+    ...
+}
+
+fn do_something_for_String(x: String) {
+    ...
+}
+
+fn do_something_for_i32(x: i32) {
+    ...
+}
+<span class="boring">}</span></code></pre></pre>
+<h2 id="dynamic-dispatch-the-one-stop-code-shop"><a class="header" href="#dynamic-dispatch-the-one-stop-code-shop">Dynamic Dispatch: The One-Stop Code Shop</a></h2>
+<p>Dynamic Dispatch is like having one mega-code that does it all. It's efficient and makes your program file size smaller. This trick is done with pointers, and you'll often see the <code>dyn</code> keyword when it's used.</p>
+<p>With Dynamic Dispatch, your code figures out what to do when it's running. It looks at the data type you're using and chooses the right action on the fly. This makes your code neater and more efficient.</p>
+<p>Let's see an example in Rust to understand these ideas better:</p>
+<pre><pre class="playground"><code class="language-rust">// you can go to https://godbolt.org/ and search for &quot;example::do_something:&quot; in the compiler result
+// you will see that the static implementation will have 2 section of do_something, while the dynamic will only have 1 (well i assume its a fact then)
+trait Foo {
+    fn method(&amp;self) -&gt; String;
+}
+impl Foo for u8 {
+    fn method(&amp;self) -&gt; String {
+        format!(&quot;u8: {}&quot;, *self)
+    }
+}
+
+impl Foo for String {
+    fn method(&amp;self) -&gt; String {
+        format!(&quot;string: {}&quot;, *self)
+    }
+}
+
+pub fn main() {
+    let x = 5u8;
+    let y = &quot;Hello&quot;.to_string();
+    // static dispatch
+    do_something(x);
+    do_something(y);
+    // dynamic dispatch
+    do_something(&amp;x);
+    do_something(&amp;y);
+}
+
+fn do_something_static&lt;T: Foo&gt;(x: T) {
+    x.method();
+}
+
+fn do_something_dynamic(x: &amp;dyn Foo) {
+    x.method();
+}</code></pre></pre>
+<p>It might seem that Dynamic Dispatch is the way to go. After all, you can let the compiler decide at runtime, providing a level of convenience and conciseness. However, here's the catch: there's a performance trade-off. In Dynamic Dispatch, the compiler has a tougher time determining which function to use, which can lead to slightly reduced performance compared to Static Dispatch. So, while Dynamic Dispatch is cool and powerful, it's essential to consider your specific use case and requirements.</p>
+<p>In conclusion, the choice between Static and Dynamic Dispatch hinges on the delicate balance between code elegance and runtime efficiency. Each has its strengths and weaknesses, and the right choice depends on your project's unique needs. Happy coding! 🚀🔥</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../journey/init.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../journey/impl_into_or_impl_from.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/impl_into_or_impl_from.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../journey/string_&amp;str_Cow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -175,11 +236,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../journey/init.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../journey/impl_into_or_impl_from.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/impl_into_or_impl_from.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../journey/string_&amp;str_Cow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

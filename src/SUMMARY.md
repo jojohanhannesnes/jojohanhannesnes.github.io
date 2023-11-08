@@ -5,10 +5,10 @@
 
 - [My Journey With Rust](journey/README.md)
     - [Impl Into or Impl From?](journey/impl_into_or_impl_from.md)
-    - [Static Dispatch and Dynamic Dispatch(TODO)]()
+    - [Static Dispatch and Dynamic Dispatch](journey/static_dynamic_dispatch.md)
+    - [From **String** to **&str** to **impl Into\<String\>** to **Cow**](journey/string_&str_Cow.md)
     - [Using Enum vs Generics as return type]()
     - [What the F is Box\<dyn Error\>]()
-    - [From **String** to **&str** to **impl Into\<String\>** to **Cow**]()
     - [HashMap with ***lexicographical order***, Maybe it's time for BTreeMap]()
 
 - [Stuff](topics/README.md)
@@ -22,6 +22,8 @@
         - [Trait Objects]()
     - [Lifetimes]()
     - [Ownership and Borrowing]()
+    - [Smart Pointers](topics/smart_pointer/README.md)
+        - [Cow](topics/smart_pointer/cow.md)
 
 [Algorithms](algorithm.md)
 [Projects](project.md)
