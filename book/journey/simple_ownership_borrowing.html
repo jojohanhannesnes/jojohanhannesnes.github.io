@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="en" class="navy" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Entry Level Ownership and Borrowing - My Journey With Rust</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../journey/simple_ownership_borrowing.html" class="active"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.2.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.3.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.4.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><div><strong aria-hidden="true">1.5.</strong> Using Enum vs Generics as return type</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.6.</strong> What the F is Box&lt;dyn Error&gt;</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.7.</strong> HashMap with lexicographical order, Maybe it's time for BTreeMap</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.8.</strong> Associated types and Generics</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.9.</strong> Why should we care about iter() if into_iter() already takes ownership?</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.10.</strong> Fn, FnMut, FnOnce</div></li><li class="chapter-item "><div><strong aria-hidden="true">1.11.</strong> Prelude</div></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">2.</strong> Stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.1.</strong> Traits</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.1.1.</strong> Trait Bounds</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.1.2.</strong> Trait Objects</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.1.3.</strong> Implied Bounds</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.2.</strong> Lifetimes</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.3.</strong> Serde</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.3.1.</strong> Ser De</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.4.</strong> Async -&gt; Tokio</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">2.4.1.</strong> Concurrency and parrarellism</div></li><li class="chapter-item "><div><strong aria-hidden="true">2.4.2.</strong> Synchronous non blocking actually exist?</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">2.5.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">2.5.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../algorithm.html">Algorithms</a></li><li class="chapter-item affix "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li><li class="chapter-item affix "><div>Whimsical Roadmap</div></li><li class="chapter-item affix "><div>Random Stuff</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">My Journey With Rust</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ownership-and-borrowing"><a class="header" href="#ownership-and-borrowing">Ownership and Borrowing</a></h1>
+<p>Hey Rust folks! Let's chat about ownership and borrowing in Rust. You've probably bumped into these terms while coding – they're like the core concepts of how Rust manages memory. Understanding them is key to grooving smoothly and be productive with Rust.</p>
+<p>Imagine you're writing a web app, or maybe learning some other concepts in Rust, there must be a time where you encountered stuff from as simple as </p>
+<ul>
+<li><code>cannot mutate variable ???</code></li>
+</ul>
+<p>And escalated pretty quickly into</p>
+<ul>
+<li><code>cannot move out of </code>???<code> which is behind a mutable reference</code></li>
+<li><code>??? is a </code>&amp;<code> reference, so the data it refers to cannot be written</code></li>
+</ul>
+<p>We'll explore some common scenarios and decipher the associated error messages. Why the compiler says that, and what should we do.</p>
+<h2 id="the-basics-of-ownership"><a class="header" href="#the-basics-of-ownership">The Basics of Ownership</a></h2>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let a = 1;
+    let b = a;
+    println!(&quot;{} {}&quot;, a, b);
+<span class="boring">}</span></code></pre></pre>
+<p>Obviously a and b will hold value 1, but what if we change a to <code>String</code>?</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let a = String::from(&quot;Hello&quot;); // move occurs because `a` has type `String`, which does not implement the `Copy` trait
+    let b = a; // value moved here
+    println!(&quot;{} {}&quot;, a, b); // value `a ` borrowed here after move
+<span class="boring">}</span></code></pre></pre>
+<p>And what in the world is going on here? What's the deal with this <code>Copy</code> and <code>move</code> business? My first instinct was to dive into the crate docs. As it turns out, a numeric type like <code>i32</code> implements the <a href="https://doc.rust-lang.org/std/primitive.i32.html#impl-Copy-for-i32" target="_blank">Copy</a> trait, but <code>String</code> doesn't (Check the trait implementations in the docs, and you won't find the Copy trait listed for <code>String</code>).</p>
+<p>Alright, so the first error line starts making sense now. Although there's a rationale behind why <code>String</code> doesn't implement the Copy trait in the first place, which is explained <a href="https://users.rust-lang.org/t/cant-derive-copy-because-of-string/18665/12" target="_blank">here</a>. For this post, I'll focus solely on deciphering the error messages.</p>
+<p>Now, the second one involves the concept of &quot;value moved.&quot; The <code>move</code> keyword is a way for us to transfer ownership of a variable. In the case of a string, the value from variable <code>a</code> is moved to variable <code>b</code>. That's why Rust can't print the variable <code>a</code> (as indicated by the error on the third line). In contrast, with integers, since they implement the <code>Copy</code> trait, Rust can simply copy the value to <code>b</code>, and the code runs smoothly. Let's experiment a bit further—what if we deliberately force Rust to <code>move</code> the <code>i32</code> to <code>b</code>?</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let a = 1;
+    let b = move || {
+        println!(&quot;Hey: {}&quot;, a);
+    };
+    b();
+    println!(&quot;{}&quot;, a);
+<span class="boring">}</span></code></pre></pre>
+<p>Surprisingly, this code runs! What's the deal with that? Well, it turns out that if the value implements the <code>Copy</code> trait, Rust is clever enough to opt for copying instead of moving, even when explicitly using the move keyword. This is why the println at the end of the line still works as expected.</p>
+<p>Now, let's spice things up by introducing some mutation into our code. When crafting applications, there's a high likelihood that values will change. In Rust, we can achieve this by taking references or borrowing values using the <code>&amp;</code> symbol. Let's explore this concept:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let a = 1;
+    let b = &amp;a;
+    b = 2;
+    println!(&quot;{} {}&quot;, a, b);
+<span class="boring">}</span></code></pre></pre>
+<p>Here, we create variable a, create a reference b pointing to a, and then attempt to mutate b. However, we encounter an error: &quot;expected &amp;{integer}, found integer.&quot; It appears strange, and indeed, this kind of code might not be familiar. Let's address this oddity:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let a = 1;
+    let b = &amp;a;
+    b = &amp;2; // kind of weird, i've never actually seen this kind of code
+    println!(&quot;{} {}&quot;, a, b);
+<span class="boring">}</span></code></pre></pre>
+<p>The error is straightforward—cannot mutate variable b. In Rust, if a variable can be mutated, you must explicitly declare it as mutable using the mut keyword. Let's rectify the code:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let a = 1;
+    let mut b = &amp;a;
+    b = &amp;2;
+    println!(&quot;{} {}&quot;, a, b);
+<span class="boring">}</span></code></pre></pre>
+<p>This code compiles, but it may seem a bit counterintuitive. Why mark b as mutable when we want to mutate a? If you've worked with other programming languages, you might be familiar with the <code>*</code> syntax for dereferencing or obtaining the value behind a reference or called a pointer. Let's try a rewrite and see if it improves clarity:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let a = 1;
+    let mut b = &amp;a; //  `b` is a `&amp;` reference, so the data it refers to cannot be written
+    *b = 2;
+    println!(&quot;{} {}&quot;, a, b);
+<span class="boring">}</span></code></pre></pre>
+<p>Now we encounter an error: <code>b is a &amp; reference, so the data it refers to cannot be written.</code> It may seem overwhelming, but let's break it down. b is a reference to a, indicating that the data it refers to (in this case, a) cannot be directly written. In Rust, referencing a value doesn't grant the ability to change it directly through the pointer.</p>
+<p>To resolve this, we can create a mutable variable a and then create a mutable reference b:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let mut a = 1;
+    let b = &amp;mut a;
+    *b = 2;
+    println!(&quot;{}&quot;, a);
+<span class="boring">}</span></code></pre></pre>
+<p>You might wonder, where is b?</p>
+<h1 id="bonus-1"><a class="header" href="#bonus-1">Bonus 1</a></h1>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let mut a = 1;
+    let b = &amp;mut a;
+    *b = 2;
+    println!(&quot;{} {}&quot;, a, b);
+<span class="boring">}</span></code></pre></pre>
+<p>The error message <code>cannot borrow a as immutable because it is also borrowed as mutable</code> can be visualized as follows:</p>
+<p>Picture yourself holding an item, let's call it <code>a</code>. Now, you grant access to another person, <code>b</code>, allowing them to modify a (while it remains in your possession since it's just borrowed). However, at the <code>println</code> statement, you decide to provide an immutable borrow of a to the <code>println</code>. Here's the catch—while someone is still borrowing your item (<code>a</code> in this scenario), you're simultaneously giving the <code>println</code> a borrow as well. However, the println operation cannot mutate the borrowed item. It's a bit weird, right?</p>
+<p>The error signifies a fundamental issue: you cannot have both a mutable and immutable reference to the same variable within the same scope of code. To illustrate this concept, let's consider a code example following this explanation:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let mut book = 1;
+    let access_to_mutate_book = &amp;mut book;
+    let someone_trying_to_read_the_book = &amp;book; // so far here ok
+    *access_to_mutate_book = 2; // if you mutate the book, rust will complain, cannot borrow...
+<span class="boring">}</span></code></pre></pre>
+<p>In this example, put yourself in the shoes of someone trying to read the book. If there's someone who can simultaneously mutate the book while you're trying to read it, it introduces potential inconsistencies and race conditions. As the codebase grows, predicting the order of execution becomes challenging, and the final value may become unpredictable. Therefore, Rust prohibits having both mutable and immutable references to the same variable within the same code scope, promoting code consistency and reliability.</p>
+<h1 id="bonus-2"><a class="header" href="#bonus-2">Bonus 2</a></h1>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let a = String::from(&quot;Hello&quot;);
+    let b = a; // a.clone()
+    println!(&quot;{} {}&quot;, a, b);
+<span class="boring">}</span></code></pre></pre>
+<p>When attempting to compile this code in Rust, the compiler may suggest using <code>clone()</code> instead. Rust acknowledges that using <code>clone()</code> is a viable alternative if the performance cost is acceptable, indicating that cloning can be an expensive operation. However, it's important to note that blindly opting for <code>clone()</code> is not always the desired solution, as the resulting object may not align with your intended outcome.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../journey/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../journey/impl_into_or_impl_from.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../journey/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../journey/impl_into_or_impl_from.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../mermaid.min.js"></script>
+        <script src="../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>
