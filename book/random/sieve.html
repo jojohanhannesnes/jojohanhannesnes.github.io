@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Why do i want to do this? - My Journey With Rust</title>
+        <title>Sieve of Eratosthenes - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html" class="active">Why do i want to do this?</a></li><li class="chapter-item "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.2.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.3.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.4.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">2.</strong> Stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">2.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">2.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">2.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">2.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">3.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">3.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.2.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.3.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.4.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">2.</strong> Stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">2.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">2.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">2.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">2.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../random/index.html"><strong aria-hidden="true">3.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../random/sieve.html" class="active"><strong aria-hidden="true">3.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,22 +154,146 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="why-do-i-want-to-do-this"><a class="header" href="#why-do-i-want-to-do-this">Why do i want to do this?</a></h1>
-<p>In the world of programming, I found myself drawn to Rust, and the question that loomed was, &quot;Why do I want to do this?&quot;</p>
-<p>I wasn't setting out to create the next Rust bible or tutorial hub. No, my blog was meant to be my personal space, a sanctuary for my thoughts and experiences on this journey. I wanted to document my progress, learn from my mistakes, and celebrate my growth.</p>
-<p>Rust had altered my perspective on programming. Its emphasis on safety and performance had struck a chord with me. My blog, in my eyes, was a canvas where I'd paint my insights, my 'Aha!' moments, and even my 'Ugh, why doesn't this work?' moments.</p>
-<p>It wasn't about teaching Rust to the world; it was about sharing my personal journey. If someone found value in my words, great, but my primary goal was to pour out everything I'd learned with Rust.</p>
-<p>As I type these words, my blog is my companion on this Rust adventure, a diary of my challenges, my victories, and the passion that Rust has kindled within me. This is why I want to do this, to create my own little corner in the vast programming universe, where my Rust journey unfolds.</p>
+                        <h1 id="party-with-eratosthenes"><a class="header" href="#party-with-eratosthenes">Party with Eratosthenes!</a></h1>
+<p>I'm diving into the thrilling world of Rust via Project Euler, thinking I've got it all under control. Then, bam! The 10th problem hits me like a curveball—summing prime numbers up to a cool 2 million.</p>
+<p>My initial plan? The ol' brute force. I mean, why not? Rust is speedy, right? Well, time to bite my fingernail 💅🏻 cause my code decides to take a nap instead of hustling.</p>
+<p>Enter my coding superhero moment! I hit the virtual streets, not for a ready-made solution but for some cryptic hints. And guess what emerges? The Sieve of Eratosthenes!</p>
+<p>I tune into a <a href="https://www.youtube.com/watch?v=klcIklsWzrY">Khan Academy video</a>, and there I am, laughing at the simplicity of it all. Armed with Eratosthenes' secret sauce, my code transforms from a sluggish snail to a sonic. A quick test run with a 10k limit, and voila! The runtime goes from a yawn-worthy 6 seconds to a jaw-dropping 7 milliseconds. Take a bow, Eratosthenes!</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Code in slow-motionnnn
+pub fn is_prime(number: &amp;usize) -&gt; bool {
+    (2..*number).all(|x| number % x != 0)
+}
+
+fn prime_10001() -&gt; usize {
+    let mut counter = 0;
+    let mut result = 0;
+    for i in 2..=usize::MAX {
+        if counter == 10001 {
+            break;
+        }
+        if is_prime(&amp;i) {
+            result = i;
+            counter += 1;
+        }
+    }
+    result
+}
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// b...b...bLAAAZINGLY FASTTTT!
+fn prime_10001_sieve() -&gt; i32 {
+    const LIMIT: usize = 10001;
+    let mut sieve = vec![true; LIMIT];
+    let mut count = 0;
+
+    for num in 2..LIMIT {
+        if sieve[num] {
+            count += 1;
+
+            if count == 10001 {
+                return num as i32;
+            }
+
+            for multiple in (2 * num..LIMIT).step_by(num) {
+                sieve[multiple] = false;
+            }
+        }
+    }
+
+    0
+}
+<span class="boring">}</span></code></pre></pre>
+<p>The tests... (7th and 10th problem)</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    #[test]
+    fn get_10001_prime() {
+        let start_time = Instant::now();
+        let result = prime_10001();
+        let elapsed_time = start_time.elapsed();
+
+        println!(&quot;Result: {}&quot;, result);
+        println!(&quot;Time taken: {:?}&quot;, elapsed_time);
+        assert_eq!(prime_10001(), 104743)
+    }
+
+    #[test]
+    fn get_10001_prime_sieve() {
+        let start_time = Instant::now();
+        let result = prime_10001_sieve();
+        let elapsed_time = start_time.elapsed();
+
+        println!(&quot;Result: {}&quot;, result);
+        println!(&quot;Time taken: {:?}&quot;, elapsed_time);
+        assert_eq!(prime_10001(), 104743)
+    }
+
+    /*
+    ---- euler::prime_10001::tests::get_10001_prime_sieve stdout ----
+    Result: 104743
+    Time taken: 7.579443ms
+
+    ---- euler::prime_10001::tests::get_10001_prime stdout ----
+    Result: 104743
+    Time taken: 6.726276021s
+    */
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn sieve_of_eratosthenes(limit: usize) -&gt; Vec&lt;usize&gt; {
+    let mut is_prime = vec![true; limit];
+    is_prime[0] = false;
+    is_prime[1] = false;
+
+    for i in 2..((limit as f64).sqrt() as usize + 1) {
+        if is_prime[i] {
+            for j in (i * i..limit).step_by(i) {
+                is_prime[j] = false;
+            }
+        }
+    }
+
+    (2..limit).filter(|&amp;x| is_prime[x]).collect()
+}
+
+fn summation_of_primes(limit: usize) -&gt; usize {
+    sieve_of_eratosthenes(limit).iter().sum::&lt;usize&gt;()
+}
+
+#[test]
+fn test() {
+    use std::time::Instant;
+    let start_time = Instant::now();
+    let result = summation_of_primes(2_000_000);
+    let elapsed_time = start_time.elapsed();
+
+    println!(&quot;Result: {}&quot;, result);
+    println!(&quot;Time taken: {:?}&quot;, elapsed_time);
+    assert_eq!(summation_of_primes(2_000_000), 142913828922)
+
+    /*
+    ---- euler::summation_of_primes::test stdout ----
+    Result: 142913828922
+    Time taken: 133.579135ms
+    */
+}
+
+<span class="boring">}</span></code></pre></pre>
+<p>Here's the concept: Starting from 2 up to a specified limit, i initially label everything as true. Then, as i traverse each number, if it holds true, i embark on a journey through its multiples until reaching the limit, marking each one as false. The brilliance lies in the fact that if, for instance, 2 is prime, this process automatically declares anything divisible by 2 as non-prime (composite). It's a straightforward and clever approach.</p>
+<p>In the end, what began as a Rust adventure turned into an epic optimization quest, where Eratosthenes stole the show from my initial brute force bravado. The code now stands as a celebration of clever algorithms and the sheer joy of making my code dance to their beats. Happy coding, party people! 🚀💻</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../random/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../project.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -179,11 +303,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../random/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../project.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

@@ -1,6 +1,6 @@
 # Awesome Youtube
 
-Here's a list of youtube channel or videos that constantly keep on rewatching, because i gain new insight everytime i come back
+Here is a compilation of YouTube channels or videos that I frequently revisit. Each time I rewatch them, I uncover fresh insights that contribute to my continuous learning journey.
 - <a href="https://www.youtube.com/@letsgetrusty" target="_blank">letsgetrusty</a>
 - <a href="https://www.youtube.com/@NoBoilerplate" target="_blank">NoBoilerplate</a>
 - <a href="https://www.youtube.com/@jonhoo" target="_blank">Jonhoo</a>
