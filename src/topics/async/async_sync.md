@@ -73,9 +73,9 @@ async fn main() {
             //     handle_client(stream).await;
             // })
             // .await;
-            // tokio::spawn(async { // finally we remove the await to make sure each request will spawn the async task, without awaiting the result, we'll have the same output same behaviour with thread but with 1 thread, not multi
-            //     handle_client(stream).await;
-            // });
+            tokio::spawn(async { // finally we remove the await to make sure each request will spawn the async task, without awaiting the result, we'll have the same output same behaviour with thread but with 1 thread, not multi
+                handle_client(stream).await;
+            });
         }
     }
 }
@@ -88,4 +88,4 @@ Noteworthy points:
 - Adding `.await` on `handle_client(stream)` blocks the main task, behaving similarly to traditional synchronous programming.
 - Using `tokio::spawn(async { ... })` creates a new async task, but adding `.await` on this spawn still blocks the main thread.
 - Finally, removing the `.await` ensures that each request spawns an async task without waiting for the result, achieving the desired asynchronous behavior with just one thread.
-
+- For a more clear way, try to use `(flavor = "current_thread")`, you will still have the same result 
