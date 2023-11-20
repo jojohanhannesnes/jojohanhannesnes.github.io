@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Static Dispatch and Dynamic Dispatch - My Journey With Rust</title>
+        <title>Learning Traits through reading libp2p IntoSecurityUpgrade - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.2.</strong> Impl Into or Impl From?</a></li><li class="chapter-item expanded "><a href="../journey/static_dynamic_dispatch.html" class="active"><strong aria-hidden="true">1.3.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.4.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.5.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">2.</strong> Stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">2.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">2.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">2.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">2.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">3.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">3.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.2.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.3.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.4.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item expanded "><a href="../journey/traits_libp2p.html" class="active"><strong aria-hidden="true">1.5.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">2.</strong> Stuff</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">2.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">2.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">2.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">2.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">3.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">3.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../youtube.html">Awesome Youtube</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,79 +154,95 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="choosing-how-your-code-runs-static-vs-dynamic-dispatch"><a class="header" href="#choosing-how-your-code-runs-static-vs-dynamic-dispatch">Choosing How Your Code Runs: Static vs Dynamic Dispatch</a></h1>
-<p>Have you ever wondered how Rust programming deals with different types of data? Two methods, Static Dispatch and Dynamic Dispatch, are here to save the day. I first encountered these concepts while learning about Rust traits. So, what's all the fuss about? Well, it's all about making your code lean and clean while keeping it easy to understand.</p>
-<h2 id="static-dispatch-double-the-code-double-the-fun"><a class="header" href="#static-dispatch-double-the-code-double-the-fun">Static Dispatch: Double the Code, Double the Fun!</a></h2>
-<p>Imagine you have two separate pieces of code, like twins. Each of these codes does something slightly different based on the type of data you give it. This precision is great, but it can make your program's file size bigger.</p>
+                        <h1 id="exploring-libp2p-traits-understanding-the-magic-behind-with_tcp"><a class="header" href="#exploring-libp2p-traits-understanding-the-magic-behind-with_tcp">Exploring libp2p Traits: Understanding the Magic Behind <code>with_tcp</code></a></h1>
+<p>I recently started learning about libp2p and got into it with a simple ping example. However, something in the code caught my eye - the use of <code>with_tcp</code> with a function pointer. I was curious about why it accepts a constructor like <code>noise::Config::new</code> and how it all works.</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>fn do_something&lt;T: Foo&gt;(x: T) {
-    ...
-}
-// once compiled become something like below
-fn do_something_for_u8(x: u8) {
-    ...
+</span>let mut swarm = libp2p::SwarmBuilder::with_new_identity()
+    .with_tokio()
+    .with_tcp(
+        tcp::Config::default(),
+        noise::Config::new,
+        yamux::Config::default,
+    )?
+    .with_behaviour(|_| ping::Behaviour::default())?
+    .with_swarm_config(|cfg| cfg.with_idle_connection_timeout(Duration::from_secs(u64::MAX)))
+    .build();
+<span class="boring">}</span></code></pre></pre>
+<h2 id="the-mystery-of-with_tcp"><a class="header" href="#the-mystery-of-with_tcp">The Mystery of <code>with_tcp</code></a></h2>
+<p>Initially, the function pointer in <code>with_tcp</code> puzzled me. Upon digging in, I found out it's a procedural macro creating both <code>with_tcp</code> for Tokio and async-std. But why pass a constructor function like <code>noise::Config::new</code>? And how is it actually used?</p>
+<h2 id="unraveling-the-traits"><a class="header" href="#unraveling-the-traits">Unraveling the Traits</a></h2>
+<p>I discovered that the function parameter in <code>with_tcp</code> needs a trait called <code>IntoSecurityUpgrade&lt;C&gt;</code>. Wanting to understand this, I checked out the trait. My goal was to grasp why <code>new</code> is possible.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait IntoSecurityUpgrade&lt;C&gt; {
+    type Upgrade;
+    type Error;
+
+    fn into_security_upgrade(self, keypair: &amp;str) -&gt; Result&lt;Self::Upgrade, Self::Error&gt;;
 }
 
-fn do_something_for_String(x: String) {
-    ...
-}
+// Implementation for a function with the signature FnOnce(&amp;'a str) -&gt; Result&lt;T, E&gt;
+impl&lt;C, T, F, E&gt; IntoSecurityUpgrade&lt;C&gt; for F
+where
+    F: for&lt;'a&gt; FnOnce(&amp;'a str) -&gt; Result&lt;T, E&gt;,
+{
+    // Associated types for the trait
+    type Upgrade = T;
+    type Error = E;
 
-fn do_something_for_i32(x: i32) {
-    ...
+    // Implementation using the provided function
+    fn into_security_upgrade(self, keypair: &amp;str) -&gt; Result&lt;Self::Upgrade, Self::Error&gt; {
+        (self)(keypair)
+    }
 }
 <span class="boring">}</span></code></pre></pre>
-<h2 id="dynamic-dispatch-the-one-stop-code-shop"><a class="header" href="#dynamic-dispatch-the-one-stop-code-shop">Dynamic Dispatch: The One-Stop Code Shop</a></h2>
-<p>Dynamic Dispatch is like having one mega-code that does it all. It's efficient and makes your program file size smaller. This trick is done with pointers, and you'll often see the <code>dyn</code> keyword when it's used.</p>
-<p>With Dynamic Dispatch, your code figures out what to do when it's running. It looks at the data type you're using and chooses the right action on the fly. This makes your code neater and more efficient.</p>
-<p>Let's see an example in Rust to understand these ideas better:</p>
-<pre><pre class="playground"><code class="language-rust">// you can go to https://godbolt.org/ and search for &quot;example::do_something:&quot; in the compiler result
-// you will see that the static implementation will have 2 section of do_something, while the dynamic will only have 1 (well i assume its a fact then)
-trait Foo {
-    fn method(&amp;self) -&gt; String;
-}
-impl Foo for u8 {
-    fn method(&amp;self) -&gt; String {
-        format!(&quot;u8: {}&quot;, *self)
+<h2 id="the-macros-revelation"><a class="header" href="#the-macros-revelation">The Macro's Revelation</a></h2>
+<p>Digging into the <code>with_tcp</code> macro, I found a crucial trait bound that makes the code generic for specific async implementations.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// $path is the third parameter in the macro
+SecUpgrade: IntoSecurityUpgrade&lt;libp2p_tcp::$path::TcpStream&gt;
+
+// Relevant code snippet within the macro
+Ok(SwarmBuilder {
+    transport: libp2p_tcp::$path::Transport::new(tcp_config)
+        .upgrade(libp2p_core::upgrade::Version::V1Lazy)
+        .authenticate(
+            security_upgrade.into_security_upgrade(&amp;self.keypair)?,
+        )
+        .multiplex(multiplexer_upgrade.into_multiplexer_upgrade())
+        .map(|(p, c), _| (p, StreamMuxerBox::new(c))),
+    // Additional configuration details...
+})
+<span class="boring">}</span></code></pre></pre>
+<h2 id="making-sense-of-intosecurityupgrade"><a class="header" href="#making-sense-of-intosecurityupgrade">Making Sense of <code>IntoSecurityUpgrade</code></a></h2>
+<p>Looking back at <code>IntoSecurityUpgrade</code>, the trait takes a function pointer, matching the constructor signature. The seemingly complex <code>F: for&lt;'a&gt; FnOnce(&amp;'a str) -&gt; Result&lt;T, E&gt;</code> actually matches the constructor's signature.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl&lt;C, T, F, E&gt; IntoSecurityUpgrade&lt;C&gt; for F
+where
+    F: for&lt;'a&gt; FnOnce(&amp;'a str) -&gt; Result&lt;T, E&gt;,
+{
+    type Upgrade = T;
+    type Error = E;
+
+    fn into_security_upgrade(self, keypair: &amp;str) -&gt; Result&lt;Self::Upgrade, Self::Error&gt; {
+        (self)(keypair) // Resembles calling the constructor function (e.g., noise::Config::new(keypair))
     }
 }
-
-impl Foo for String {
-    fn method(&amp;self) -&gt; String {
-        format!(&quot;string: {}&quot;, *self)
-    }
-}
-
-pub fn main() {
-    let x = 5u8;
-    let y = &quot;Hello&quot;.to_string();
-    // static dispatch
-    do_something(x);
-    do_something(y);
-    // dynamic dispatch
-    do_something(&amp;x);
-    do_something(&amp;y);
-}
-
-fn do_something_static&lt;T: Foo&gt;(x: T) {
-    x.method();
-}
-
-fn do_something_dynamic(x: &amp;dyn Foo) {
-    x.method();
-}</code></pre></pre>
-<p>It might seem that Dynamic Dispatch is the way to go. After all, you can let the compiler decide at runtime, providing a level of convenience and conciseness. However, here's the catch: there's a performance trade-off. In Dynamic Dispatch, the compiler has a tougher time determining which function to use, which can lead to slightly reduced performance compared to Static Dispatch. So, while Dynamic Dispatch is cool and powerful, it's essential to consider your specific use case and requirements.</p>
-<p>In conclusion, the choice between Static and Dynamic Dispatch hinges on the delicate balance between code elegance and runtime efficiency. Each has its strengths and weaknesses, and the right choice depends on your project's unique needs. Happy coding! 🚀🔥</p>
+<span class="boring">}</span></code></pre></pre>
+<p>Though I might not fully grasp the entire process, this journey helped me understand rust better. I now get how the <code>new</code> function works.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../journey/impl_into_or_impl_from.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../journey/string_&amp;str_Cow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/string_&amp;str_Cow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../topics/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -236,11 +252,11 @@ fn do_something_dynamic(x: &amp;dyn Foo) {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../journey/impl_into_or_impl_from.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../journey/string_&amp;str_Cow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/string_&amp;str_Cow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../topics/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
