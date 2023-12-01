@@ -9,15 +9,23 @@
     - [Static Dispatch and Dynamic Dispatch](journey/static_dynamic_dispatch.md)
     - [From **String** to **&str** to **impl Into\<String\>** to **Cow**](journey/string_&str_Cow.md)
     - [Learning Traits through reading libp2p IntoSecurityUpgrade](journey/traits_libp2p.md)
-    <!-- - [Box\<dyn Error\>]()
-    - [Associated Types and Generics]() -->
-
-
+- [Peer to Peer]()
+    - [What is Peer to Peer](p2p/what_is_p2p.md)
+    - [Location Based Addressing and Content Based Addressing](p2p/location_vs_content.md)
+    - [libp2p](p2p/libp2p.md)
+    - [CID](p2p/cid.md)
+    - [Merkle DAG]()
+    - [Transport]()
+        - [TCP]()
+        - [WebSockets]()
+        - [WebRTC]()
+        - [QUIC]()
+        - [Distributed Hash Table]()
+    <!-- BFT, PAXOS, RAFT, DHT (mDNS, DNS), OrbitDB, Kademlia, Floodsub, gossipsub, -->
 - [Stuff](topics/README.md)
     - [Asynchronous](topics/async/README.md)
         - [Understanding Synchronous and Asynchronous Programming](topics/async/async_sync.md)
-        <!-- - [If you're passing to a spawn, you gotta use Arc<Mutex<T>>, well, TcpStream implement Send + Sync which is kind of the same]()
-        - [Is it CPU Bound or I/O Bound](topics/async/cpu_io_bound.md) -->
+        - [Arc<Mutex<T>>, MutexGuard]()
     - [Smart Pointers](topics/smart_pointer/README.md)
         - [Cow](topics/smart_pointer/cow.md)
 - [Random](random/README.md)
