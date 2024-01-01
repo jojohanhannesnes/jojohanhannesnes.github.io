@@ -32,4 +32,4 @@
     - [Sieve of Eratosthenes](random/sieve.md)
 
 [Projects](project.md)
-[Awesome Youtube](youtube.md)
+[Awesome Resource](awesome.md)
