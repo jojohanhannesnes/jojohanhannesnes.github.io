@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Impl Into or Impl From? - My Journey With Rust</title>
+        <title>Scopes - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item expanded "><a href="../journey/impl_into_or_impl_from.html" class="active"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.6.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item expanded "><a href="../journey/scopes.html" class="active"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.6.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -156,65 +156,60 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="unlocking-the-magic-of-impl-into-and-impl-from"><a class="header" href="#unlocking-the-magic-of-impl-into-and-impl-from">Unlocking the Magic of impl Into and impl From</a></h1>
-<p>Today, I embarked on a journey to create a dynamic return statement for a Rust function, and the code quickly became a labyrinth. Here's what I started with:</p>
+                        <h1 id="understanding-scopes-and-borrowing-in-rust"><a class="header" href="#understanding-scopes-and-borrowing-in-rust">Understanding Scopes and Borrowing in Rust</a></h1>
+<p>Scope in Rust is where the ownership and borrowing rules live, making it crucial for writing Rust code. Understanding every line of code is vital to grasping what it does. Recently, I encountered a simple yet enlightening example that provided a clearer view of borrowing and ownership scopes in Rust.</p>
+<p>Let's delve into the code:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut b = 1;
+    let b_ref = &amp;mut b;
+    *b_ref = 3; // Mutate `b` directly
+    println!("{b}");
+}
+
+fn haha(b_ref: &amp;i32) {}</code></pre></pre>
+<p>In this straightforward snippet, a mutable reference is used to mutate the variable <code>b</code>.</p>
+<p>The next example passes a mutable reference to a function:</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>fn function() -&gt; ??? {
-
-}
+</span>let mut b = 1;
+haha(&amp;mut b); // Move it to a function
+println!("{b}");
 <span class="boring">}</span></code></pre></pre>
-<p>To bring some structure and flexibility (i guess?), I decided to introduce an enum called Response:</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span>
-<span class="boring">fn main() {
-</span>enum Response {
-    String(String),
-    Number(i64),
-}
-
-fn function() -&gt; Response {
-    ...
-    Response::String(String:from("response")) // Response::Number(100) will also works
-}
-
-<span class="boring">}</span></code></pre></pre>
-<p>While the enum certainly tidied things up, I couldn't help but wonder if there was a more elegant solution. What if we could seamlessly transform a value into the desired return type, without all this boilerplate? Enter <code>Into</code>.</p>
-<p><code>Into</code> is a trait that performs type conversion, provided there's an implementation for it. It's like magic, allowing you to turn one type into another with minimal effort. But it comes with a twist – there's also <code>From</code>. Both of these traits seem to do the same thing, but there's a subtle difference.</p>
-<p><code>Clippy</code> has an opinion on this matter:</p>
-<blockquote>
-<p>An implementation of <code>From</code> is preferred since it gives you <code>Into&lt;_&gt;</code> for free where the reverse isn't true.</p>
-</blockquote>
-<p>This nugget of wisdom tells us that if we implement <code>From</code>, we automatically inherit <code>Into</code>. The reverse, however, is not true. <br><br>Here's a demonstration:</p>
+<p>Here, a mutable reference is simply passed to the function.</p>
+<p>Now, let's explore two more code snippets:</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>// impl Into&lt;Response&gt; for i64 {
-//     fn into(self) -&gt; Response {
-//         Response::Number(self)
-//     }
-// }
-// 12_i64.into() ✅
-// Response::from(12_i64) ❌
-
-impl From&lt;i64&gt; for Response {
-    fn from(value: i64) -&gt; Self {
-        Response::Number(value)
-    }
+</span>fn one() {
+    let mut b = 1;
+    let b_ref = &amp;b;
+    haha(b_ref); // Modify the value through the mutable reference
+    b = 3; // Mutate `b` directly
+    println!("{b} {}", b_ref);
 }
-// 12_i64.into() ✅
-// Response::from(12_i64) ✅
+
+fn two() {
+    let mut b = 1;
+    haha(&amp;b); // Modify the value through the mutable reference
+    b = 3; // Mutate `b` directly
+    println!("{b} {}", &amp;b);
+}
 <span class="boring">}</span></code></pre></pre>
-<p>There's also another thing called <code>TryFrom</code> and <code>TryInto</code>, wasn't sure if they have the same exact behaviour, all i know is that they are fallible (meaning they return <code>Result</code> type), probably for better error handling</p>
+<p>At first glance, these two snippets may appear similar. However, understanding each line reveals a crucial difference. The first code won't compile due to a violation of Rust's borrowing and ownership rules. The error arises from storing the reference of <code>b</code> into a variable (<code>b_ref</code>), which extends its scope beyond what's expected.</p>
+<p>When you borrow a variable with a reference in Rust, you create an immutable borrow. This means that while the reference is in scope, you cannot mutate the original variable directly. Mixing mutable and immutable borrows violates Rust's rules.</p>
+<p>The issue here is actually quite simple, I just wanted to try printing the reference!</p>
+<p>So, why does the second code work? Because the function <code>haha</code> takes the scope of the immutable reference. It cannot modify it because it's behind a reference (unless you use <code>mut</code> or maybe something fancy like a <code>RefCell&lt;T&gt;</code>). I'm not an expert yet, so I'll leave <code>RefCell</code> for later. But the main point is, the second code works. Doesn't it feel good? Well, at least it does for me😀</p>
+<p>In summary, when you use <code>&amp;b</code> directly, the scope and rules of the immutable borrow apply to the function call where you pass <code>&amp;b</code>. As long as that function call is active, you cannot mutate <code>b</code> directly. On the other hand, storing the reference in a variable (<code>let b_ref = &amp;b;</code>) applies the scope and rules of the immutable borrow to the variable <code>b_ref</code>. As long as <code>b_ref</code> is in scope, you cannot mutate <code>b</code> directly.</p>
+<p>So, the next time you encounter borrowing and ownership in Rust, remember to pay close attention to scopes and the rules they enforce.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../journey/scopes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../journey/simple_ownership_borrowing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/static_dynamic_dispatch.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../journey/impl_into_or_impl_from.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -224,11 +219,11 @@ impl From&lt;i64&gt; for Response {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../journey/scopes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../journey/simple_ownership_borrowing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/static_dynamic_dispatch.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../journey/impl_into_or_impl_from.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
