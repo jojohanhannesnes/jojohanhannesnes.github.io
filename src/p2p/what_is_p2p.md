@@ -1,3 +1,0 @@
-# Peer to Peer
-
-the networking layer, where you dont need a central server to maintain all the things, its just client connected to another client. altough it sounds interesting there is a lot of problem that needs to be solve, there's thousands of jargon that i wanted to learn, from DHT, kademlia, multiplexing, Peer discovery, NAT Traversal,Merkle-CRDTs, any many more. i'll be focusing on the library libp2p since its a framework that you can use to built p2p application.
