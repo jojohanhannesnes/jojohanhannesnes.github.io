@@ -13,7 +13,6 @@
 - [Peer to Peer]()
     - [Location Based Addressing and Content Based Addressing](p2p/location_vs_content.md)
     - [CID](p2p/cid.md)
-    <!-- BFT, PAXOS, RAFT, DHT (mDNS, DNS), OrbitDB, Kademlia, Floodsub, gossipsub, -->
 - [Concepts](topics/README.md)
     - [Asynchronous](topics/async/README.md)
         - [Understanding Synchronous and Asynchronous Programming](topics/async/async_sync.md)
