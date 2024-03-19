@@ -10,5 +10,3 @@ I've organized this exploration into several distinct sections:
 - [The Stuff](topics/index.html) - Think of it as my Rubber Duck for diving into specific Rust concepts.
 
 - [The Projects](project.md) - Of course, this is where I showcase my projects.
-
-- [The Algorithms](algorithm.md) - Join me in learning Rust through algorithm.

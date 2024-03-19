@@ -9,6 +9,7 @@
     - [Impl Into or Impl From?](journey/impl_into_or_impl_from.md)
     - [Static Dispatch and Dynamic Dispatch](journey/static_dynamic_dispatch.md)
     - [From **String** to **&str** to **impl Into\<String\>** to **Cow**](journey/string_&str_Cow.md)
+    - [Double-Edged Sword 🔪: Enums on Wildcards](journey/rust_enum.md)
     - [Learning Traits through reading libp2p IntoSecurityUpgrade](journey/traits_libp2p.md)
 - [Peer to Peer]()
     - [Location Based Addressing and Content Based Addressing](p2p/location_vs_content.md)

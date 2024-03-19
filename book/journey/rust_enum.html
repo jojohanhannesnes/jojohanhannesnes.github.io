@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Impl Into or Impl From? - My Journey With Rust</title>
+        <title>Double-Edged Sword 🔪: Enums on Wildcards - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item expanded "><a href="../journey/impl_into_or_impl_from.html" class="active"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/rust_enum.html"><strong aria-hidden="true">1.6.</strong> Double-Edged Sword 🔪: Enums on Wildcards</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.7.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item expanded "><a href="../journey/rust_enum.html" class="active"><strong aria-hidden="true">1.6.</strong> Double-Edged Sword 🔪: Enums on Wildcards</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.7.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -156,65 +156,58 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="unlocking-the-magic-of-impl-into-and-impl-from"><a class="header" href="#unlocking-the-magic-of-impl-into-and-impl-from">Unlocking the Magic of impl Into and impl From</a></h1>
-<p>Today, I embarked on a journey to create a dynamic return statement for a Rust function, and the code quickly became a labyrinth. Here's what I started with:</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>fn function() -&gt; ??? {
+                        <h1 id="the-dangers-of-wildcards-in-rust-enums-a-lesson-from-logan_smith"><a class="header" href="#the-dangers-of-wildcards-in-rust-enums-a-lesson-from-logan_smith">The Dangers of Wildcards in Rust Enums: A Lesson from Logan_Smith</a></h1>
+<p>In Rust, enums provide a powerful way to define a type with a fixed set of possible values. However, using wildcards in match statements with enums can lead to unexpected behavior and potential bugs. This insight was inspired by Logan_Smith's YouTube series on Rust programming, particularly <a href="https://www.youtube.com/watch?v=8j_FbjiowvE&amp;list=PLhjB8nmMLotIG0ik1RXjl0lfZcg9oxhMg">this video</a>.</p>
+<p>Let's explore this issue with an example:</p>
+<pre><pre class="playground"><code class="language-rust">use Status::*;
 
-}
-<span class="boring">}</span></code></pre></pre>
-<p>To bring some structure and flexibility (i guess?), I decided to introduce an enum called Response:</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span>
-<span class="boring">fn main() {
-</span>enum Response {
-    String(String),
-    Number(i64),
+enum Status {
+    Pending,
+    Success,
 }
 
-fn function() -&gt; Response {
-    ...
-    Response::String(String:from("response")) // Response::Number(100) will also works
-}
-
-<span class="boring">}</span></code></pre></pre>
-<p>While the enum certainly tidied things up, I couldn't help but wonder if there was a more elegant solution. What if we could seamlessly transform a value into the desired return type, without all this boilerplate? Enter <code>Into</code>.</p>
-<p><code>Into</code> is a trait that performs type conversion, provided there's an implementation for it. It's like magic, allowing you to turn one type into another with minimal effort. But it comes with a twist – there's also <code>From</code>. Both of these traits seem to do the same thing, but there's a subtle difference.</p>
-<p><code>Clippy</code> has an opinion on this matter:</p>
-<blockquote>
-<p>An implementation of <code>From</code> is preferred since it gives you <code>Into&lt;_&gt;</code> for free where the reverse isn't true.</p>
-</blockquote>
-<p>This nugget of wisdom tells us that if we implement <code>From</code>, we automatically inherit <code>Into</code>. The reverse, however, is not true. <br><br>Here's a demonstration:</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>// impl Into&lt;Response&gt; for i64 {
-//     fn into(self) -&gt; Response {
-//         Response::Number(self)
-//     }
-// }
-// 12_i64.into() ✅
-// Response::from(12_i64) ❌
-
-impl From&lt;i64&gt; for Response {
-    fn from(value: i64) -&gt; Self {
-        Response::Number(value)
+fn main() {
+    let x = Status::Pending;
+    match x {
+        Pending =&gt; todo!(),
+        Success =&gt; todo!(),
     }
+}</code></pre></pre>
+<p>In this example, we have an enum <code>Status</code> with two variants: <code>Pending</code> and <code>Success</code>. The <code>match</code> statement is used to match the value of <code>x</code> against the enum variants. However, if we were to change the enum to include a <code>Failed</code> variant and forget to update the <code>match</code> statement:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Status {
+    Pending,
+    Failed,
 }
-// 12_i64.into() ✅
-// Response::from(12_i64) ✅
 <span class="boring">}</span></code></pre></pre>
-<p>There's also another thing called <code>TryFrom</code> and <code>TryInto</code>, wasn't sure if they have the same exact behaviour, all i know is that they are fallible (meaning they return <code>Result</code> type), probably for better error handling</p>
+<p>The <code>match</code> statement will still compile, but the <code>Success</code> variant will act as a catch-all pattern, matching any value that is not explicitly handled. This can lead to unintended behavior and make it difficult to spot bugs.</p>
+<p>To mitigate this issue, we can use aliases to ensure that all enum variants are explicitly matched:</p>
+<pre><pre class="playground"><code class="language-rust">use Status as S;
+
+enum Status {
+    Pending,
+    Failed,
+}
+
+fn main() {
+    let x = S::Pending;
+    match x {
+        S::Pending =&gt; todo!(),
+        S::Failed =&gt; todo!(),
+    }
+}</code></pre></pre>
+<p>By using aliases (<code>S::Pending</code>, <code>S::Failed</code>) instead of the enum variants directly, we ensure that all variants are accounted for in the <code>match</code> statement. This makes the code more robust and easier to maintain, especially when the enum is updated with new variants.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../journey/scopes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../journey/string_&amp;str_Cow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/static_dynamic_dispatch.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../journey/traits_libp2p.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -224,11 +217,11 @@ impl From&lt;i64&gt; for Response {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../journey/scopes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../journey/string_&amp;str_Cow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/static_dynamic_dispatch.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../journey/traits_libp2p.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
