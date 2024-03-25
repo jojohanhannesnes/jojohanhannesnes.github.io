@@ -26,3 +26,4 @@
 [Projects](project.md)
 [Awesome Resource](awesome.md)
 [Contributions](contributions.md)
+[Certifications](certifications.md)

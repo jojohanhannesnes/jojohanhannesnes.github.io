@@ -5,8 +5,8 @@ It's a personal space where I'm sharing my experiences, discoveries, and everyth
 
 I've organized this exploration into several distinct sections:
 
-- [The Journey](journey/index.html) - Here, you'll find my day-to-day coding adventures and the cool stuff I stumble upon.
+- [Journey](journey/index.html) - Here, you'll find my day-to-day coding adventures and the cool stuff I stumble upon.
 
-- [The Stuff](topics/index.html) - Think of it as my Rubber Duck for diving into specific Rust concepts.
+- [Concepts](topics/index.html) - Think of it as my Rubber Duck for diving into specific Rust concepts.
 
-- [The Projects](project.md) - Of course, this is where I showcase my projects.
+- [Projects](project.md) - Of course, this is where I showcase my projects.
