@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Double-Edged Sword 🔪: Enums on Wildcards - My Journey With Rust</title>
+        <title>Going back to String and &amp;str - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/string_and_str.html"><strong aria-hidden="true">1.6.</strong> Going back to String and &str</a></li><li class="chapter-item expanded "><a href="../journey/rust_enum.html" class="active"><strong aria-hidden="true">1.7.</strong> Double-Edged Sword 🔪: Enums on Wildcards</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.8.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Blocking / Non Blocking (I/O)</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.3.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li><li class="chapter-item affix "><a href="../certifications.html">Certifications</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item expanded "><a href="../journey/string_and_str.html" class="active"><strong aria-hidden="true">1.6.</strong> Going back to String and &str</a></li><li class="chapter-item "><a href="../journey/rust_enum.html"><strong aria-hidden="true">1.7.</strong> Double-Edged Sword 🔪: Enums on Wildcards</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.8.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Blocking / Non Blocking (I/O)</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.3.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li><li class="chapter-item affix "><a href="../certifications.html">Certifications</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -156,58 +156,55 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="the-dangers-of-wildcards-in-rust-enums-a-lesson-from-logan_smith"><a class="header" href="#the-dangers-of-wildcards-in-rust-enums-a-lesson-from-logan_smith">The Dangers of Wildcards in Rust Enums: A Lesson from Logan_Smith</a></h1>
-<p>In Rust, enums provide a powerful way to define a type with a fixed set of possible values. However, using wildcards in match statements with enums can lead to unexpected behavior and potential bugs. This insight was inspired by Logan_Smith's YouTube series on Rust programming, particularly <a href="https://www.youtube.com/watch?v=8j_FbjiowvE&amp;list=PLhjB8nmMLotIG0ik1RXjl0lfZcg9oxhMg">this video</a>.</p>
-<p>Let's explore this issue with an example:</p>
-<pre><pre class="playground"><code class="language-rust">use Status::*;
-
-enum Status {
-    Pending,
-    Success,
+                        <h1 id="going-back-to-string-and-str"><a class="header" href="#going-back-to-string-and-str">Going back to String and &amp;str</a></h1>
+<p>Let's take a quick look at the relationship between String and &amp;str in Rust. This won't delve deeply into the intricacies but will address some key points.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    test_str(&amp;String::from("hi"));
 }
 
-fn main() {
-    let x = Status::Pending;
-    match x {
-        Pending =&gt; todo!(),
-        Success =&gt; todo!(),
-    }
-}</code></pre></pre>
-<p>In this example, we have an enum <code>Status</code> with two variants: <code>Pending</code> and <code>Success</code>. The <code>match</code> statement is used to match the value of <code>x</code> against the enum variants. However, if we were to change the enum to include a <code>Failed</code> variant and forget to update the <code>match</code> statement:</p>
+fn test_str(a: &amp;str) {}</code></pre></pre>
+<p>There is a concept known as "deref coercion" in Rust. When a type implements the Deref trait, the implementation defines what the type does when it is referenced. Therefore, whenever you create a reference from something, Deref plays a role in the referencing process.</p>
+<p>Below is the Rust code you can refer to for the implementation, with a focus on the return type.</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>enum Status {
-    Pending,
-    Failed,
+</span>impl ops::Deref for String {
+    type Target = str;
+
+    #[inline]
+    fn deref(&amp;self) -&gt; &amp;str { // &lt;--- look at the return type
+        unsafe { str::from_utf8_unchecked(&amp;self.vec) }
+    }
 }
 <span class="boring">}</span></code></pre></pre>
-<p>The <code>match</code> statement will still compile, but the <code>Success</code> variant will act as a catch-all pattern, matching any value that is not explicitly handled. This can lead to unintended behavior and make it difficult to spot bugs.</p>
-<p>To mitigate this issue, we can use aliases to ensure that all enum variants are explicitly matched:</p>
-<pre><pre class="playground"><code class="language-rust">use Status as S;
-
-enum Status {
-    Pending,
-    Failed,
+<p>Cool stuff I found today is that this works when doing comparisons as well. I was working on a palindrome problem, and my approach was to split the left part and the right part of the string (reversed), and then compare the two. Initially, my approach was to use <code>chars().rev().collect()</code>, as I assumed that was the easiest way. However, when I collected it, at first it couldn't be collected as <code>&amp;str</code>, so I changed it to <code>String</code>, and there was no complaint from the compiler.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>...
+digits[0..length / 2] == digits[length / 2..].chars().rev().collect::&lt;String&gt;() // left is string slice, right is String
+...
+<span class="boring">}</span></code></pre></pre>
+<p>Why is it possible to compare <code>String</code> and <code>&amp;str</code>?</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(PartialEq, PartialOrd, Eq, Ord)]
+#[stable(feature = "rust1", since = "1.0.0")]
+#[cfg_attr(not(test), lang = "String")]
+pub struct String {
+    vec: Vec&lt;u8&gt;,
 }
-
-fn main() {
-    let x = S::Pending;
-    match x {
-        S::Pending =&gt; todo!(),
-        S::Failed =&gt; todo!(),
-    }
-}</code></pre></pre>
-<p>By using aliases (<code>S::Pending</code>, <code>S::Failed</code>) instead of the enum variants directly, we ensure that all variants are accounted for in the <code>match</code> statement. This makes the code more robust and easier to maintain, especially when the enum is updated with new variants.</p>
+<span class="boring">}</span></code></pre></pre>
+<p>This is the source code for <code>String</code>. Ignore the fact that I was fooled into not knowing that <code>String</code> is a <code>Vec&lt;u8&gt;</code>. Since I'm searching for the reason of how <code>==</code> works, I'm looking at the traits. It's actually implemented as <code>PartialEq</code> and <code>Eq</code>. After looking at the source code, it's actually a macro (which I haven't taken the time to learn; I know it generates some code but nothing more). Here's the macro <code>impl_eq! { String, &amp;'a str }</code>, assuming that this is the part where <code>PartialEq</code> implemented for <code>String</code>. For the implementation we can take a quick look <a href="https://doc.rust-lang.org/std/cmp/trait.PartialEq.html" target="_blank">here</a></p>
+<p>Still, I think the most important aspect, ultimately, is not an exceedingly profound mystery that I know nothing about. It feels good, man.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../journey/string_and_str.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../journey/string_&amp;str_Cow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/traits_libp2p.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../journey/rust_enum.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -217,11 +214,11 @@ fn main() {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../journey/string_and_str.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../journey/string_&amp;str_Cow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/traits_libp2p.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../journey/rust_enum.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
