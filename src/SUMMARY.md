@@ -11,6 +11,7 @@
     - [From **String** to **&str** to **impl Into\<String\>** to **Cow**](journey/string_&str_Cow.md)
     - [Going back to String and &str](journey/string_and_str.md)
     - [Double-Edged Sword 🔪: Enums on Wildcards](journey/rust_enum.md)
+    - [Nested sorting with sort_by_key](journey/sort_by_key.md)
     - [Learning Traits through reading libp2p IntoSecurityUpgrade](journey/traits_libp2p.md)
 - [Peer to Peer]()
     - [Location Based Addressing and Content Based Addressing](p2p/location_vs_content.md)
