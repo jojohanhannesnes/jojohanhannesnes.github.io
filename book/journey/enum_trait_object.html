@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Nested sorting with sort_by_key - My Journey With Rust</title>
+        <title>Enum and Traits for Trait Objects (and how to refactor interfaces) - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/string_and_str.html"><strong aria-hidden="true">1.6.</strong> Going back to String and &str</a></li><li class="chapter-item "><a href="../journey/rust_enum.html"><strong aria-hidden="true">1.7.</strong> Double-Edged Sword 🔪: Enums on Wildcards</a></li><li class="chapter-item expanded "><a href="../journey/sort_by_key.html" class="active"><strong aria-hidden="true">1.8.</strong> Nested sorting with sort_by_key</a></li><li class="chapter-item "><a href="../journey/box_vs_ref.html"><strong aria-hidden="true">1.9.</strong> The size for values cannot be known at compile time, so?</a></li><li class="chapter-item "><a href="../journey/into_from_iterator.html"><strong aria-hidden="true">1.10.</strong> IntoIterator(array in notes) and FromIterator (HashMap and Vec)</a></li><li class="chapter-item "><a href="../journey/enum_trait_object.html"><strong aria-hidden="true">1.11.</strong> Enum and Traits for Trait Objects (and how to refactor interfaces)</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.12.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Blocking / Non Blocking (I/O)</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.3.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li><li class="chapter-item affix "><a href="../certifications.html">Certifications</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/string_and_str.html"><strong aria-hidden="true">1.6.</strong> Going back to String and &str</a></li><li class="chapter-item "><a href="../journey/rust_enum.html"><strong aria-hidden="true">1.7.</strong> Double-Edged Sword 🔪: Enums on Wildcards</a></li><li class="chapter-item "><a href="../journey/sort_by_key.html"><strong aria-hidden="true">1.8.</strong> Nested sorting with sort_by_key</a></li><li class="chapter-item "><a href="../journey/box_vs_ref.html"><strong aria-hidden="true">1.9.</strong> The size for values cannot be known at compile time, so?</a></li><li class="chapter-item "><a href="../journey/into_from_iterator.html"><strong aria-hidden="true">1.10.</strong> IntoIterator(array in notes) and FromIterator (HashMap and Vec)</a></li><li class="chapter-item expanded "><a href="../journey/enum_trait_object.html" class="active"><strong aria-hidden="true">1.11.</strong> Enum and Traits for Trait Objects (and how to refactor interfaces)</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.12.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Blocking / Non Blocking (I/O)</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.3.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li><li class="chapter-item affix "><a href="../certifications.html">Certifications</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -156,39 +156,17 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="nested-sorting-a-cool-trick-with-sort_by_key"><a class="header" href="#nested-sorting-a-cool-trick-with-sort_by_key">Nested Sorting: A Cool Trick with sort_by_key</a></h1>
-<p>Imagine you have a list of numbers and you want to sort them in a special way:</p>
-<p>first, you want all the odd numbers to come before the even numbers, and then within each group, you want the numbers to be sorted in ascending order. Sounds complicated isn't it? In Rust, you can achieve this using the <code>sort_by_key</code> method along with a closure that defines how to extract and compare keys.</p>
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    let mut v = vec![8, 17, 4, 9, 22, 31, 16, 3, 12, 5];
-    v.sort_by_key(|&amp;v| (v % 2, v));
-    println!("{:?}", v); // [4, 8, 12, 16, 22, 3, 5, 9, 17, 31]
-}</code></pre></pre>
-<ul>
-<li>
-<p>sort_by_key: This is a method provided by Rust's standard library for sorting a collection based on a key extracted from each element. It takes a closure that extracts a key from each element and uses that key for sorting.</p>
-</li>
-<li>
-<p><code>(|&amp;v| (v % 2, v))</code>: This is the closure passed to sort_by_key. It takes an integer v (which is a reference due to &amp;) and returns a tuple <code>(v % 2, v)</code>.</p>
-</li>
-<li>
-<p><code>(v % 2, v)</code>: This tuple serves as the key for sorting. The first element v % 2 is the remainder of v divided by 2, which effectively groups even and odd numbers together. The second element v itself ensures that within each group, the numbers are sorted in ascending order.</p>
-</li>
-</ul>
-<p>So, for example, if v is <code>[3, 7, 2, 5, 8, 4]</code>, the closure would return <code>[(1, 3), (1, 7), (0, 2), (1, 5), (0, 8), (0, 4)]</code>, where odd numbers come before even numbers, and within each group, numbers are sorted in ascending order.</p>
-<blockquote>
-<p><strong>Note</strong>: <br><em><strong>The sort_by_key method uses the keys returned by the closure to sort the vector v. <br><br>Since the keys are tuples, the sorting happens in two steps:<br> - First, based on the first element of the tuple (v % 2), which groups the numbers.<br> - Second, based on the second element (v), which sorts the numbers within each group.</strong></em></p>
-</blockquote>
+                        <h1 id="enum-and-traits-for-trait-objects-and-how-to-refactor-interfaces"><a class="header" href="#enum-and-traits-for-trait-objects-and-how-to-refactor-interfaces">Enum and Traits for Trait Objects (and how to refactor interfaces)</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../journey/rust_enum.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../journey/into_from_iterator.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/box_vs_ref.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../journey/traits_libp2p.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -198,11 +176,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../journey/rust_enum.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../journey/into_from_iterator.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/box_vs_ref.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../journey/traits_libp2p.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
