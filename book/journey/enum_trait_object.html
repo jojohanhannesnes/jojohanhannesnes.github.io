@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Enum and Traits for Trait Objects (and how to refactor interfaces) - My Journey With Rust</title>
+        <title>Enum and Trait Objects - My Journey With Rust</title>
 
 
         <!-- Custom HTML head -->
@@ -87,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/string_and_str.html"><strong aria-hidden="true">1.6.</strong> Going back to String and &str</a></li><li class="chapter-item "><a href="../journey/rust_enum.html"><strong aria-hidden="true">1.7.</strong> Double-Edged Sword 🔪: Enums on Wildcards</a></li><li class="chapter-item "><a href="../journey/sort_by_key.html"><strong aria-hidden="true">1.8.</strong> Nested sorting with sort_by_key</a></li><li class="chapter-item "><a href="../journey/box_vs_ref.html"><strong aria-hidden="true">1.9.</strong> The size for values cannot be known at compile time, so?</a></li><li class="chapter-item "><a href="../journey/into_from_iterator.html"><strong aria-hidden="true">1.10.</strong> IntoIterator(array in notes) and FromIterator (HashMap and Vec)</a></li><li class="chapter-item expanded "><a href="../journey/enum_trait_object.html" class="active"><strong aria-hidden="true">1.11.</strong> Enum and Traits for Trait Objects (and how to refactor interfaces)</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.12.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Blocking / Non Blocking (I/O)</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.3.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li><li class="chapter-item affix "><a href="../certifications.html">Certifications</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item affix "><a href="../journey/init.html">Why do i want to do this?</a></li><li class="chapter-item expanded "><a href="../journey/index.html"><strong aria-hidden="true">1.</strong> My Journey With Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../journey/simple_ownership_borrowing.html"><strong aria-hidden="true">1.1.</strong> Entry Level Ownership and Borrowing</a></li><li class="chapter-item "><a href="../journey/scopes.html"><strong aria-hidden="true">1.2.</strong> Scopes</a></li><li class="chapter-item "><a href="../journey/impl_into_or_impl_from.html"><strong aria-hidden="true">1.3.</strong> Impl Into or Impl From?</a></li><li class="chapter-item "><a href="../journey/static_dynamic_dispatch.html"><strong aria-hidden="true">1.4.</strong> Static Dispatch and Dynamic Dispatch</a></li><li class="chapter-item "><a href="../journey/string_&str_Cow.html"><strong aria-hidden="true">1.5.</strong> From String to &str to impl Into&lt;String&gt; to Cow</a></li><li class="chapter-item "><a href="../journey/string_and_str.html"><strong aria-hidden="true">1.6.</strong> Going back to String and &str</a></li><li class="chapter-item "><a href="../journey/rust_enum.html"><strong aria-hidden="true">1.7.</strong> Double-Edged Sword 🔪: Enums on Wildcards</a></li><li class="chapter-item "><a href="../journey/sort_by_key.html"><strong aria-hidden="true">1.8.</strong> Nested sorting with sort_by_key</a></li><li class="chapter-item "><a href="../journey/box_vs_ref.html"><strong aria-hidden="true">1.9.</strong> The size for values cannot be known at compile time, so?</a></li><li class="chapter-item expanded "><a href="../journey/enum_trait_object.html" class="active"><strong aria-hidden="true">1.10.</strong> Enum and Trait Objects</a></li><li class="chapter-item "><a href="../journey/into_from_iterator.html"><strong aria-hidden="true">1.11.</strong> IntoIterator(array in notes) and FromIterator (HashMap and Vec)</a></li><li class="chapter-item "><a href="../journey/traits_libp2p.html"><strong aria-hidden="true">1.12.</strong> Learning Traits through reading libp2p IntoSecurityUpgrade</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">2.</strong> Peer to Peer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../p2p/location_vs_content.html"><strong aria-hidden="true">2.1.</strong> Location Based Addressing and Content Based Addressing</a></li><li class="chapter-item "><a href="../p2p/cid.html"><strong aria-hidden="true">2.2.</strong> CID</a></li></ol></li><li class="chapter-item "><a href="../topics/index.html"><strong aria-hidden="true">3.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/index.html"><strong aria-hidden="true">3.1.</strong> Asynchronous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/async/async_sync.html"><strong aria-hidden="true">3.1.1.</strong> Understanding Synchronous and Asynchronous Programming</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.2.</strong> Blocking / Non Blocking (I/O)</div></li><li class="chapter-item "><div><strong aria-hidden="true">3.1.3.</strong> Arc&lt;Mutex&gt;, MutexGuard</div></li></ol></li><li class="chapter-item "><a href="../topics/smart_pointer/index.html"><strong aria-hidden="true">3.2.</strong> Smart Pointers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../topics/smart_pointer/cow.html"><strong aria-hidden="true">3.2.1.</strong> Cow</a></li></ol></li></ol></li><li class="chapter-item "><a href="../random/index.html"><strong aria-hidden="true">4.</strong> Random</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../random/sieve.html"><strong aria-hidden="true">4.1.</strong> Sieve of Eratosthenes</a></li></ol></li><li class="chapter-item "><a href="../project.html">Projects</a></li><li class="chapter-item affix "><a href="../awesome.html">Awesome Resource</a></li><li class="chapter-item affix "><a href="../contributions.html">Contributions</a></li><li class="chapter-item affix "><a href="../certifications.html">Certifications</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -156,17 +156,133 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="enum-and-traits-for-trait-objects-and-how-to-refactor-interfaces"><a class="header" href="#enum-and-traits-for-trait-objects-and-how-to-refactor-interfaces">Enum and Traits for Trait Objects (and how to refactor interfaces)</a></h1>
+                        <h1 id="enum-and-traits-for-trait-objects"><a class="header" href="#enum-and-traits-for-trait-objects">Enum and Traits for Trait Objects</a></h1>
+<p>When you're learning Rust, you might wonder whether to use <code>Enum</code> or <code>Trait Object</code> to make your code look better.</p>
+<p>Let's walkthrough it with an example, first with <code>Enum</code>.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let enum_q = AdderEnum::Q(1);
+    test(enum_q);
+}
+
+#[derive(Debug)]
+enum AdderEnum {
+    Q(i32),
+    W(i32),
+    E(i32),
+}
+
+fn test(a: AdderEnum) {
+    match a {
+        AdderEnum::Q(i) =&gt; a.check(&amp;a),
+        AdderEnum::W(i) =&gt; todo!(),
+        AdderEnum::E(i) =&gt; todo!(),
+    }
+}
+
+impl AdderEnum {
+    pub fn check(&amp;self, example: &amp;AdderEnum) {
+        match *self {
+            AdderEnum::Q(_) =&gt; example.getVal(),
+            AdderEnum::W(_) =&gt; todo!(),
+            AdderEnum::E(_) =&gt; todo!(),
+        };
+    }
+}
+
+impl ValueHolder for AdderEnum {
+    fn getVal(&amp;self) -&gt; usize {
+        println!("getting enum value for {self:?}");
+        (match *self {
+            AdderEnum::Q(i) =&gt; i,
+            AdderEnum::W(i) =&gt; i,
+            AdderEnum::E(i) =&gt; i,
+        }) as usize
+    }
+}</code></pre></pre>
+<p>This is quite simple, but if you modify the <code>AdderEnum</code>, you'll have to change all the code with match arms. Also, if you make this <code>AdderEnum</code> public and someone outside of your codebase tries to use it, it will be a breaking change. Now let's look at the <code>Trait</code> implementation.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait Adder {
+    fn add(&amp;mut self, example: &amp;dyn Adder);
+}
+
+pub struct X {
+    pub val: usize,
+}
+
+pub struct Y {
+    pub val: usize,
+}
+
+impl Adder for X {
+    fn add(&amp;mut self, example: &amp;dyn Adder) {
+        todo!()
+    }
+}
+
+impl Adder for Y {
+    fn add(&amp;mut self, example: &amp;dyn Adder) {
+        todo!()
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<p>In the main function, you can use it like this:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let mut x = X { val: 1 };
+    let y = Y { val: 1 };
+    x.add(&amp;y);
+<span class="boring">}</span></code></pre></pre>
+<p>The question is how do you get a value from <code>example</code>? there's this thing called <code>downcasting</code>, meaning that it can check and refer to what is actually passed to the parameters. But there's a problem, to achieve this, what i've found is that you have to change the signature of the trait to accept <code>std::any::Any</code>. And if you do that, shit happens. Now you're allowing <strong><code>any</code></strong> struct that implement <strong><code>any kind of</code></strong> trait to be passed to the function. Look at this example.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Z;
+pub trait ZTrait {}
+<span class="boring">}</span></code></pre></pre>
+<p>This <code>Z</code> can be pass to the <code>add()</code> methods. Isn't that concerning? When i ask this on <a href="https://stackoverflow.com/questions/78239036/how-to-get-a-struct-value-from-a-trait-object" target="_blank">stackoverflow</a> i get a pretty good answer!</p>
+<ol>
+<li>
+<p>it's actually possible to get the value of <code>example</code></p>
+</li>
+<li>
+<p>my code is shit, cause it's an antipattern.</p>
+</li>
+<li>
+<p>To get the value you have to simply add a new trait to extract that value.</p>
+</li>
+</ol>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait ValueHolder {
+    fn getVal(&amp;self) -&gt; usize;
+}
+pub trait Adder: ValueHolder {
+    fn add(&amp;mut self, sample: &amp;dyn Adder);
+}
+<span class="boring">}</span></code></pre></pre>
+<ol start="2">
+<li>Refering to the comments, i tried to assume this is heavily related to static vs dynamic dispatch. In short, imagine if the code is refactored to use generics instead. When we use generics, the compiler probably know what are the possibility of <code>T</code>. The size of the binary would probably be bigger because of it, but it is easy for the program to know which method to call.</li>
+</ol>
+<blockquote>
+<blockquote>
+<p><strong>Note</strong> : using trait object allow you to apply Open-Closed Principle in OOP. This means that your trait is <code>closed</code> for modification, but <code>open</code> for any extension. you can let other people from other codebases use your trait into their own struct, without sacrificing you own code. no modification needed. This doesn't mean that <code>Enum</code> is bad, everything is a tradeoff and you have to choose what is the best for the situation. you have to add the new variant everytime there's a new thing, updating match arms in every place in your code, but with <code>Trait</code>, it is considered that you're sacrificing performance, because of dynamic dispatch, in the sense that your code have to decide at runtime, what are the type that actually passed to the function</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Bonus</strong> : If you want to make a <code>Trait</code>, and restrict some method, meaning it cannot be <em><code>override</code></em> by another struct that impl your <code>Trait</code> (default implementation can be overriden), you can use something like blanket implementation. refer <a href="https://stackoverflow.com/questions/77562161/prevent-a-trait-function-from-being-implemented-by-other-struct/77562235#77562235" target="_blank">here</a></p>
+</blockquote>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../journey/into_from_iterator.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../journey/box_vs_ref.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../journey/traits_libp2p.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../journey/into_from_iterator.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -176,11 +292,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../journey/into_from_iterator.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../journey/box_vs_ref.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../journey/traits_libp2p.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../journey/into_from_iterator.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
