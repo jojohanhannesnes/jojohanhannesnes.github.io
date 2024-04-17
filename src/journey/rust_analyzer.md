@@ -1,4 +1,4 @@
-#Tools are just Tools
+# Tools are just Tools
 
 This is not trying to make another project looks bad or anything, even i don't have the capacity yet to create such big things. but i was just trying to say, be careful when relying your trust on certain tools. today i found 2 simple error
 
@@ -40,4 +40,5 @@ impl Test {
 snippet 1, will give you an error on vscode, but passed through check, clippy, and actually compiled.
 snippet 2, will *not* give you any error message on vscode, but it won't compile, the error is pretty scary though.
 
-the idea is, it's better to deepen your understanding of the code, rather than keep on relying the tools, or compiler
+the idea is, it's better to deepen your understanding of the code, rather than keep on relying the tools, or compiler.
+And better, use CI/CD broo...

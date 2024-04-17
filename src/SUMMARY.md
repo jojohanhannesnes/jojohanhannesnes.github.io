@@ -1,7 +1,6 @@
 # Summary
 
 [Introduction](README.md)
-[Why do i want to do this?](journey/init.md)
 
 - [My Journey With Rust](journey/README.md)
     - [Entry Level Ownership and Borrowing](journey/simple_ownership_borrowing.md)
@@ -14,22 +13,22 @@
     - [Nested sorting with sort_by_key](journey/sort_by_key.md)
     - [The size for values cannot be known at compile time, so?](journey/box_vs_ref.md)
     - [Enum and Trait Objects](journey/enum_trait_object.md)
-    - [IntoIterator(array in notes) and FromIterator (HashMap and Vec)](journey/into_from_iterator.md)
     - [Tools are just tools](journey/rust_analyzer.md)
     - [Drop. Just Drop](journey/drop.md)
     - [Learning Traits through reading libp2p IntoSecurityUpgrade](journey/traits_libp2p.md)
+    - [Cow](topics/smart_pointer/cow.md)
 - [Concepts](topics/README.md)
+    - [Words](topics/words/README.md)
     - [Asynchronous](topics/async/README.md)
         - [Understanding Synchronous and Asynchronous Programming](topics/async/async_sync.md)
         - [Blocking / Non Blocking (I/O)]()
         - [Arc<Mutex<T>>, MutexGuard]()
-    - [Smart Pointers](topics/smart_pointer/README.md)
-        - [Cow](topics/smart_pointer/cow.md)
+        - [Async Cancellations]()
 - [Random](random/README.md)
+    - [How do i mock external dependencies]()
     - [Algorithm](random/algorithm.md)
         - [Hello Big Guy](random/big_o.md)
         - [Sieve of Eratosthenes](random/sieve.md)
-
 
 [Projects](project.md)
 [Awesome Resource](awesome.md)

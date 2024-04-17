@@ -1,15 +1,17 @@
 # Awesome Resource
 
+## GOAT
+
+- <a href="https://github.com/ctjhoa/rust-learning" target="_blank">Rust Learning</a>
+
 ## Youtube
-Here is a compilation of YouTube channels or videos that I frequently revisit. Each time I rewatch them, I uncover fresh insights that contribute to my continuous learning journey.
-- <a href="https://www.youtube.com/@jonhoo" target="_blank">Jonhoo</a>
-- <a href="https://www.youtube.com/@JeremyChone" target="_blank">JeremyChone</a>
-- <a href="https://www.youtube.com/@fasterthanlime" target="_blank">fasterthanlime</a>
-- <a href="https://www.youtube.com/@letsgetrusty" target="_blank">letsgetrusty</a>
-- <a href="https://www.youtube.com/@NoBoilerplate" target="_blank">NoBoilerplate</a>
-- <a href="https://www.youtube.com/@_noisecode" target="_blank">_noisecode</a>
+Here is a compilation of YouTube channels that I subscribed and frequently revisit. Each time I rewatch them, I uncover fresh insights that contribute to my continuous learning journey.
+- <a href="https://www.youtube.com/channel/UCZdjkRdZyH9wsSL5A5CpR9Q" target="_blank">My Subscriptions</a>
 
 
-## Links
-- <a href="https://blessed.rs/crates" target="_blank">blessed.rs</a> is a list of popular crates
-- <a href="https://github.com/watchexec/cargo-watch" target="_blank">cargo watch
+## Other Stuff
+- <a href="https://blessed.rs/crates" target="_blank">blessed.rs</a>
+- <a href="https://github.com/watchexec/cargo-watch" target="_blank">cargo watch</a>
+- <a href="https://github.com/hadolint/hadolint" target="_blank">dockerfile linter</a>
+- <a href="https://github.com/AbdesamedBendjeddou/Rusty-CS" target="_blank">rust curriculums</a>
+
