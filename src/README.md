@@ -6,6 +6,4 @@ I've organized this exploration into several distinct sections:
 
 - [Journey](journey/index.html) - Here, you'll find my day to day coding adventures and the cool stuff I stumble upon.
 
-- [Concepts](topics/index.html) - Think of it as my rubberduck for diving into specific Rust concepts.
-
 - [Projects](project.md) - Learning Rust through creating projects.

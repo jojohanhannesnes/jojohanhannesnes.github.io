@@ -2,6 +2,7 @@
 
 ## GOAT
 
+- <a href="https://github.com/rust-unofficial/awesome-rust" target="_blank">Awesome Rust</a>
 - <a href="https://github.com/ctjhoa/rust-learning" target="_blank">Rust Learning</a>
 
 ## Youtube
